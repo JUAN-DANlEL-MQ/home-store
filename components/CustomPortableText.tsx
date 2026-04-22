@@ -36,6 +36,7 @@ export function CustomPortableText({
         )
       },
     },
+    
     types: {
       image: ({value}: {value: Image & {alt?: string; caption?: string}}) => {
         return (
