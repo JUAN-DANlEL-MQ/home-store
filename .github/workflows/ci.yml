@@ -19,6 +19,12 @@ jobs:
       - uses: actions/setup-node@v6
         with:
           node-version: lts/*
-      - run: npm ci
-      - run: npm run type-check
-      - run: npm run lint -- --max-warnings 0 -f gha
+
+      # 👇 AGREGA ESTO
+      - run: npm install -g pnpm
+
+      # 👇 CAMBIA ESTO
+      - run: pnpm install
+
+      - run: pnpm run type-check
+      - run: pnpm run lint -- --max-warnings 0 -f gha
